@@ -1,0 +1,25 @@
+<table class="table disciplinatable">
+    <tr>
+        <td><h3>Detalhes do Disciplina</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Nome:</td>
+        <td>{{disciplina.nome}}</td>
+    </tr>
+    <tr>
+        <td>Ano Letivo:</td>
+        <td>{{disciplina.ano_letivo}}</td>
+    </tr>
+    <tr>
+        <td>Número de Vagas:</td>
+        <td>{{disciplina.numero_vagas}}</td>
+    </tr>
+    <tr>
+        <td>Professor
+        <td>{{disciplina.professor.nome}}</td>
+    </tr>
+</table>
+<div>
+    <a class="btn btn-primary" ui-sref="editDisciplina({id:disciplina.id})">Edit</a>
+</div>

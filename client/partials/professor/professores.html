@@ -1,0 +1,24 @@
+<a ui-sref="newProfessor" class="btn-primary btn-lg nodecoration">Add Novo Professor</a>
+<table class="table movietable">
+    <tr>
+        <td><h3>Todos os Professores</h3></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Nome</td>
+        <td>CPF</td>
+        <td>Data de Nascimento</td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="professor in professores">
+        <td>{{professor.nome}} </td>
+        <td>{{professor.cpf}} </td>
+        <td>{{professor.data_nasc | date:'dd/MM/yyyy'}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewProfessor({id:professor.id})">View</a>
+            <a class="btn btn-danger"  ng-click="deleteProfessor(professor)">Delete</a>
+        </td>
+    </tr>
+</table>
+<span ng-show="professores.length<=0"> Não há professores</span>

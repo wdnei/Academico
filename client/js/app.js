@@ -3,64 +3,50 @@
  */
 
 angular.module('app',['ui.router',
+                      'ui.utils.masks',
                       'ngResource',
-                      'app.controllers.Caixa',
-                      'app.controllers.Funcionario',
-                      'app.controllers.Estoque',
-                      'app.controllers.Saida',
-                      'app.controllers.DRE',
+                      'app.controllers.Disciplina',
+                      'app.controllers.Professor',
                       'app.services',
                       'lbServices']);
 
 angular.module('app').config(function($stateProvider,$httpProvider){
-    $stateProvider.state('funcionarios',{
-        url:'/funcionarios',
-        templateUrl:'partials/funcionario/funcionarios.html',
-        controller:'FuncionarioListController'
-    }).state('viewFuncionario',{
-       url:'/funcionarios/:id/view',
-       templateUrl:'partials/funcionario/funcionario-view.html',
-       controller:'FuncionarioViewController'
-    }).state('newFuncionario',{
-        url:'/funcionarios/new',
-        templateUrl:'partials/funcionario/funcionario-add.html',
-        controller:'FuncionarioCreateController'
-    }).state('editFuncionario',{
-        url:'/funcionarios/:id/edit',
-        templateUrl:'partials/funcionario/funcionario-edit.html',
-        controller:'FuncionarioEditController'
+    $stateProvider.state('professores',{
+        url:'/professores',
+        templateUrl:'partials/professor/professores.html',
+        controller:'ProfessorListController'
+    }).state('viewProfessor',{
+       url:'/professores/:id/view',
+       templateUrl:'partials/professor/professor-view.html',
+       controller:'ProfessorViewController'
+    }).state('newProfessor',{
+        url:'/professores/new',
+        templateUrl:'partials/professor/professor-add.html',
+        controller:'ProfessorCreateController'
+    }).state('editProfessor',{
+        url:'/professores/:id/edit',
+        templateUrl:'partials/professor/professor-edit.html',
+        controller:'ProfessorEditController'
     })
-    .state('caixas',{
-        url:'/caixas',
-        templateUrl:'partials/caixa/caixas.html',
-        controller:'CaixaListController'
-    }).state('viewCaixa',{
-       url:'/caixas/:id/view',
-       templateUrl:'partials/caixa/caixa-view.html',
-       controller:'CaixaViewController'
-    }).state('newCaixa',{
-        url:'/caixas/new',
-        templateUrl:'partials/caixa/caixa-add.html',
-        controller:'CaixaCreateController'
-    }).state('editCaixa',{
-        url:'/caixas/:id/edit',
-        templateUrl:'partials/caixa/caixa-edit.html',
-        controller:'CaixaEditController'
-    }).state('estoques',{
-        url:'/estoques',
-        templateUrl:'partials/estoque/estoques.html',
-        controller:'EstoqueListController'
-    }).state('saidas',{
-        url:'/saidas',
-        templateUrl:'partials/saida/saidas.html',
-        controller:'SaidaListController'
-    }).state('dres',{
-        url:'/dres',
-        templateUrl:'partials/dre/dres.html',
-        controller:'DREListController'
+    .state('disciplinas',{
+        url:'/disciplinas',
+        templateUrl:'partials/disciplina/disciplinas.html',
+        controller:'DisciplinaListController'
+    }).state('viewDisciplina',{
+       url:'/disciplinas/:id/view',
+       templateUrl:'partials/disciplina/disciplina-view.html',
+       controller:'DisciplinaViewController'
+    }).state('newDisciplina',{
+        url:'/disciplinas/new',
+        templateUrl:'partials/disciplina/disciplina-add.html',
+        controller:'DisciplinaCreateController'
+    }).state('editDisciplina',{
+        url:'/disciplinas/:id/edit',
+        templateUrl:'partials/disciplina/disciplina-edit.html',
+        controller:'DisciplinaEditController'
     });
 }).run(function($state){
-   $state.go('caixas');
+   $state.go('disciplinas');
 }).config(function (LoopBackResourceProvider) {
 
             // Use a custom auth header instead of the default 'Authorization'
@@ -76,7 +62,6 @@ angular.module('app').config(function($stateProvider,$httpProvider){
         ])
 
 .constant("APIlb", {
-        "url": "http://localhost:3000/api"
-    }).constant("Setting", {
-            "metodo": "peps"
-        });
+        "urlLB": "http://localhost:3000/api",
+        "urlCorreios": "http://cep.correiocontrol.com.br/"
+    });

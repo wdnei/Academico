@@ -1,0 +1,52 @@
+
+<div class="form-group">
+  <label for="qtd" class="col-sm-2 control-label">Nome</label>
+  <div class="col-sm-10">
+    <input type="string"  required  ng-model="disciplina.nome" class="form-control" name="nome" placeholder="Nome"/>
+  </div>
+  <div role="alert">
+    <span class="error" ng-show="myForm.nome.$error.required">
+      Necessário!</span>
+  </div>
+</div>
+<div class="form-group">
+  <label for="ano_letivo" class="col-sm-2 control-label">Ano Letivo</label>
+  <div class="col-sm-10">
+    <input type="string"  required ng-model="disciplina.ano_letivo" class="form-control" name="ano_letivo" placeholder="Ano Letivo"/>
+  </div>
+  <div role="alert">
+    <span class="error" ng-show="myForm.ano_letivo.$error.required">
+      Necessário!</span>
+  </div>
+
+</div>
+
+<div class="form-group">
+  <label for="numero_vagas" class="col-sm-2 control-label">Número de Vagas</label>
+  <div class="col-sm-10">
+    <input type="number"  required ng-model="disciplina.numero_vagas" class="form-control" name="numero_vagas" placeholder="Número de Vagas"/>
+  </div>
+  <div role="alert">
+    <span class="error" ng-show="myForm.numero_vagas.$error.required">
+      Necessário!</span>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label for="professorId" class="col-sm-2 control-label">Professor</label>
+  <div class="col-sm-10">
+    <select required ng-model="disciplina.professorId" ng-options="professor.id as professor.nome for professor in professores">
+    </select>
+  </div>
+  <div role="alert">
+    <span class="error" ng-show="myForm.professorId.$error.required">
+      Necessário!</span>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <input type="submit" class="btn btn-primary" value="Salvar"/>
+  </div>
+</div>

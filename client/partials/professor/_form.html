@@ -1,0 +1,123 @@
+<div class="form-group">
+  <label for="nome" class="col-sm-2 control-label">Nome</label>
+  <div class="col-sm-10">
+    <input type="text" required ng-model="professor.nome" class="form-control" name="nome" placeholder="Nome"/>
+    <div role="alert">
+      <span class="error" ng-show="myForm.nome.$error.required">
+       Necessário!</span>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label for="cpf" class="col-sm-2 control-label">CPF</label>
+  <div class="col-sm-10">
+    <input type="text" ng-model="professor.cpf" required class="form-control" name="cpf" ui-br-cpf-mask placeholder="CPF"/>
+    <div role="alert">
+      <span class="error" ng-show="myForm.cpf.$error.cpf">
+        CPF inválido!</span>
+      <span class="error" ng-show="myForm.cpf.$error.required">
+        Necessário!</span>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label for="cargo" class="col-sm-2 control-label">Gênero</label>
+  <div class="col-sm-10">
+    <label>
+      <input type="radio" ng-model="professor.genero" value="Masculino">
+      Masculino
+    </label><br/>
+    <label>
+      <input type="radio" ng-model="professor.genero" value="Feminino">
+      Feminino
+    </label><br/>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="data_nasc" class="col-sm-2 control-label">Data de Nascimento</label>
+  <div class="col-sm-10">
+    <input type="date" required ng-model="professor.data_nasc" class="form-control" name="data_nasc" name="data_nasc" />
+    <div role="alert">
+      <span class="error" ng-show="myForm.data_nasc.$error.date">
+        Data inválida!</span>
+      <span class="error" ng-show="myForm.data_nasc.$error.required">
+        Necessário!</span>
+    </div>
+  </div>
+</div>
+
+<h4><small>Endereço</small></h4>
+<div class="form-group">
+  <label for="cep" class="col-sm-2 control-label">CEP</label>
+  <div class="col-sm-10">
+    <input type="text" required ng-model="professor.end_cep" ng-blur="getEndereco(professor.end_cep);" ui-br-cep-mask class="form-control" name="cep" placeholder="CEP"/>
+    <div role="alert">
+      <span class="error" ng-show="myForm.cep.$error.cep">
+      CEP inválido!</span>
+    <span class="error" ng-show="myForm.cep.$error.required">
+      Necessário!</span>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="rua" class="col-sm-2 control-label">Rua</label>
+  <div class="col-sm-10">
+    <input type="text" ng-disabled="true" required ng-model="professor.end_rua" class="form-control" name="rua" placeholder="Rua"/>
+    <div role="alert">
+      <span class="error" ng-show="myForm.rua.$error.required">
+        Necessário!</span>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="numero" class="col-sm-2 control-label">Número</label>
+  <div class="col-sm-10">
+    <input type="number" required  ng-model="professor.end_numero" class="form-control" name="numero" placeholder="Número"/>
+    <div role="alert">
+      <span class="error" ng-show="myForm.numero.$error.required">
+        Necessário!</span>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="bairro" class="col-sm-2 control-label">Bairro</label>
+  <div class="col-sm-10">
+    <input type="text" required ng-disabled="true" ng-model="professor.end_bairro" class="form-control" name="bairro" placeholder="Bairro"/>
+    <div role="alert">
+      <span class="error" ng-show="myForm.bairro.$error.required">
+        Necessário!</span>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="cidade" class="col-sm-2 control-label">Cidade</label>
+  <div class="col-sm-10">
+    <input type="text" required ng-disabled="true" ng-model="professor.end_cidade" class="form-control" name="cidade" placeholder="Cidade"/>
+    <div role="alert">
+      <span class="error" ng-show="myForm.cidade.$error.required">
+        Necessário!</span>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="estado" class="col-sm-2 control-label">Estado</label>
+  <div class="col-sm-10">
+    <input type="text" required ng-disabled="true" ng-model="professor.end_estado" class="form-control" name="estado" placeholder="Estado"/>
+    <div role="alert">
+      <span class="error" ng-show="myForm.estado.$error.required">
+        Necessário!</span>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <input type="submit" class="btn btn-primary" value="Salvar"/>
+  </div>
+</div>

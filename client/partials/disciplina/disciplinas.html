@@ -1,0 +1,26 @@
+<a ui-sref="newDisciplina" class="btn-primary btn-lg nodecoration">Add Nova Disciplina</a>
+
+<h3>Todos os Disciplinas</h3>
+<table class="table movietable">
+    <tr>
+        <th>Disciplina</th>
+        <th>Ano Letivo</th>
+        <th>Professor</th>
+        <th>Vagas</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="disciplina in disciplinas">
+
+        <td>{{disciplina.nome}}</td>
+        <td>{{disciplina.ano_letivo}}</td>
+        <td>{{disciplina.professor.nome}}</td>
+        <td>{{disciplina.numero_vagas}}</td>
+
+
+        <td>
+            <a class="btn btn-primary" ui-sref="viewDisciplina({id:disciplina.id})">View</a>
+            <a class="btn btn-danger"  ng-click="deleteDisciplina(disciplina.id)">Delete</a>
+        </td>
+    </tr>
+</table>
+<span ng-show="disciplinas.length<=0"> Não há disciplinas</span>

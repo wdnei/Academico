@@ -11,12 +11,8 @@
       "type": "string",
       "required": true
     },
-    "periodo_ano": {
-      "type": "number",
-      "required": true
-    },
-    "periodo_semestre": {
-      "type": "number",
+    "ano_letivo": {
+      "type": "string",
       "required": true
     },
     "numero_vagas": {
@@ -25,7 +21,12 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "professor": {
+        "type": "belongsTo",
+        "model": "Professor"
+      }
+  },
   "acls": [],
   "methods": []
 }

@@ -1,0 +1,46 @@
+<table class="table professortable">
+    <tr>
+        <td><h3>Detalhes do Professor</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Nome:</td>
+        <td>{{professor.nome}}</td>
+    </tr>
+    <tr>
+        <td>Genêro:</td>
+        <td>{{professor.genero}}</td>
+    </tr>
+    <tr>
+        <td>Data de Nascimento:</td>
+        <td>{{professor.data_nasc | date:'dd/MM/yyyy'}}</td>
+    </tr>
+    <tr>
+        <td><h3><small>Endereco</small></h3></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>CEP:</td>
+        <td>{{professor.end_cep}}</td>
+    </tr>
+    <tr>
+        <td>Rua:</td>
+        <td>{{professor.end_rua}}</td>
+    </tr>
+    <tr>
+        <td>Número:</td>
+        <td>{{professor.end_numero}}</td>
+    </tr>
+    <tr>
+        <td>Bairro:</td>
+        <td>{{professor.end_bairro}}</td>
+    </tr>
+    <tr>
+        <td>Estado:</td>
+        <td>{{professor.end_estado}}</td>
+    </tr>
+</table>
+<div>
+    <a class="btn btn-primary" ui-sref="editProfessor({id:professor.id})">Edit</a>
+</div>

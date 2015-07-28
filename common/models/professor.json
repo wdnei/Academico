@@ -15,7 +15,7 @@
       "type": "string",
       "required": true
     },
-    "data_nascimento": {
+    "data_nasc": {
       "type": "date",
       "required": true
     },

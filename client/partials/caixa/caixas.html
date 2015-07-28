@@ -1,0 +1,25 @@
+<a ui-sref="newCaixa" class="btn-primary btn-lg nodecoration">Add Novo Caixa</a>
+
+<h3>Todos os Caixas</h3>
+<table class="table movietable">
+    <tr>
+        <th>Tipo</th>
+        <th>Data</th>
+        <th>Quantidade</th>
+        <th>Preço</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="caixa in caixas">
+
+        <td>{{caixa.tipo}}</td>
+        <td>{{caixa.data_adicao}}</td>
+        <td>{{caixa.qtd}}</td>
+        <td>{{caixa.preco_unitario}}</td>
+
+
+        <td>
+            <a class="btn btn-primary" ui-sref="viewCaixa({id:caixa.id})">View</a>
+            <!-- <a class="btn btn-danger"  ng-click="deleteCaixa(caixa.id)">Delete</a> -->
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,26 @@
+
+<h3>Todos os Saidas</h3>
+<table class="table movietable">
+    <tr>
+
+        <th>Data</th>
+        <th>Qtd</th>
+        <th>Preço</th>
+        <th>Estoque</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="saida in saidas">
+
+        <td>{{saida.data_adicao}}</td>
+        <td>{{saida.qtd}}</td>
+        <td>{{saida.preco_unitario}}</td>
+        <td>{{saida.estoqueId}}</td>
+
+
+
+        <!-- <td>
+            <a class="btn btn-primary" ui-sref="viewCaixa({id:saida.id})">View</a>
+            <a class="btn btn-danger"  ng-click="deleteCaixa(saida.id)">Delete</a>
+        </td> -->
+    </tr>
+</table>

@@ -1,0 +1,21 @@
+<table class="table caixatable">
+    <tr>
+        <td><h3>Detalhes do Caixa</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Nome:</td>
+        <td>{{caixa.primeiro_nome}}{{" "}}{{caixa.ultimo_nome}}</td>
+    </tr>
+    <tr>
+        <td>Cargo:</td>
+        <td>{{caixa.cargo}}</td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td>{{caixa.email}}</td>
+    </tr>
+</table>
+<div>
+    <a class="btn btn-primary" ui-sref="editCaixa({id:caixa.id})">Edit</a>
+</div>

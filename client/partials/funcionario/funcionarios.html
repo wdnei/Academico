@@ -1,0 +1,14 @@
+<a ui-sref="newFuncionario" class="btn-primary btn-lg nodecoration">Add Novo Funcionario</a>
+<table class="table movietable">
+    <tr>
+        <td><h3>Todos os Funcionarios
+        <td></td>
+    </tr>
+    <tr ng-repeat="funcionario in funcionarios">
+        <td>{{funcionario.primeiro_nome}} {{" "}}{{funcionario.ultimo_nome}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewFuncionario({id:funcionario.id})">View</a>
+            <a class="btn btn-danger"  ng-click="deleteFuncionario(funcionario.id)">Delete</a>
+        </td>
+    </tr>
+</table>

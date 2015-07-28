@@ -1,0 +1,50 @@
+{
+  "name": "Professor",
+  "plural": "Professores",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "cpf": {
+      "type": "string",
+      "required": true
+    },
+    "genero": {
+      "type": "string",
+      "required": true
+    },
+    "data_nascimento": {
+      "type": "date",
+      "required": true
+    },
+    "end_rua": {
+      "type": "string",
+      "required": true
+    },
+    "end_numero": {
+      "type": "number",
+      "required": true
+    },
+    "end_bairro": {
+      "type": "string",
+      "required": true
+    },
+    "end_cidade": {
+      "type": "string",
+      "required": true
+    },
+    "end_estado": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {"disciplina": {
+      "type": "hasMany",
+      "model": "Disciplina"
+    }},
+  "acls": [],
+  "methods": []
+}

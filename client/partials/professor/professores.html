@@ -6,18 +6,18 @@
         <td></td>
     </tr>
     <tr>
-        <td>Nome</td>
-        <td>CPF</td>
-        <td>Data de Nascimento</td>
-        <td></td>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Data de Nascimento</th>
+        <th></th>
     </tr>
     <tr ng-repeat="professor in professores">
         <td>{{professor.nome}} </td>
         <td>{{professor.cpf}} </td>
         <td>{{professor.data_nasc | date:'dd/MM/yyyy'}}</td>
         <td>
-            <a class="btn btn-primary" ui-sref="viewProfessor({id:professor.id})">View</a>
-            <a class="btn btn-danger"  ng-click="deleteProfessor(professor)">Delete</a>
+            <a class="btn btn-primary" ui-sref="viewProfessor({id:professor.id})">Ver</a>
+            <a class="btn btn-danger"  ng-click="deleteProfessor(professor)">Deletar</a>
         </td>
     </tr>
 </table>

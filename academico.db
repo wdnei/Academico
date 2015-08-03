@@ -1,0 +1,23 @@
+{
+  "ids": {
+    "User": 1,
+    "AccessToken": 1,
+    "ACL": 1,
+    "RoleMapping": 1,
+    "Role": 1,
+    "Professor": 6,
+    "Disciplina": 7
+  },
+  "models": {
+    "User": {},
+    "AccessToken": {},
+    "ACL": {},
+    "RoleMapping": {},
+    "Role": {},
+    "Professor": {
+      "4": "{\"cpf\":\"13238300733\",\"genero\":\"Masculino\",\"data_nasc\":\"2015-08-03T20:38:04.951Z\",\"end_rua\":\"Rua Peroba do Campo\",\"end_numero\":12,\"end_bairro\":\"Feu Rosa\",\"end_cidade\":\"Serra\",\"end_estado\":\"ES\",\"id\":4,\"nome\":\"sacs\",\"end_cep\":\"29172365\"}",
+      "5": "{\"cpf\":\"13238300733\",\"genero\":\"Masculino\",\"data_nasc\":\"2015-08-03T20:47:24.430Z\",\"end_rua\":\"Rua Peroba do Campo\",\"end_numero\":24,\"end_bairro\":\"Feu Rosa\",\"end_cidade\":\"Serra\",\"end_estado\":\"ES\",\"id\":5,\"nome\":\"dsgvsd\",\"end_cep\":\"29172365\"}"
+    },
+    "Disciplina": {}
+  }
+}

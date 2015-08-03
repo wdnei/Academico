@@ -8,7 +8,7 @@ angular.module('app',['ui.router',
                       'app.controllers.Disciplina',
                       'app.controllers.Professor',
                       'app.services',
-                      'lbServices']);
+                      'lbServices','ui.mask']);
 
 angular.module('app').config(function($stateProvider,$httpProvider){
     $stateProvider.state('professores',{

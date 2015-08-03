@@ -1,14 +1,23 @@
 .top-buffer{
-    margin-top:10px;
+  margin-top:10px;
 }
 
 .movietable tr td:nth-child(2){
-    width: 150px;
+  width: 150px;
 }
 
 .movietable tr:nth-child(1) td{
-    border-top: none;
+  border-top: none;
 }
 a.nodecoration{
-    text-decoration:none;
+  text-decoration:none;
+}
+
+
+.css-form input.ng-invalid.ng-touched {
+  background-color: #FA787E;
+}
+
+.css-form input.ng-valid.ng-touched {
+  background-color: #78FA89;
 }

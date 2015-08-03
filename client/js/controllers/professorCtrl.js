@@ -78,6 +78,10 @@ angular.module('app.controllers.Professor',[]).controller('ProfessorListControll
 
       }).controller('ProfessorCreateController',function($scope,$state,$window,$http,$stateParams,APIlb,Professor){
 
+        $scope.showMSG=function(str){
+          $window.alert(str);
+        };
+        
         $scope.professor={
           nome:"",
           cpf:"",
@@ -113,7 +117,13 @@ angular.module('app.controllers.Professor',[]).controller('ProfessorListControll
             $scope.professor.end_cidade="";
             $scope.professor.end_rua="";
             $scope.professor.end_estado="";
-            $window.alert("CEP inválido");
+            if(status==0)
+            {
+              $window.alert("Não há conexão com a internet para recuperar o endereço!");
+            }else {
+              $window.alert("CEP inválido");
+            }
+
 
           });
         };
@@ -133,14 +143,24 @@ angular.module('app.controllers.Professor',[]).controller('ProfessorListControll
           }, function (res) {
             // error
             console.log( "Erro ao realizar registro!");
-            $window.alert("Erro ao adicionar professor:"+res.status);
+            if(res.status==422)
+            {
+              $window.alert("Erro ao adicionar professor:"+res.data.error.message);
+            }
+            else
+            {
+              $window.alert("Erro ao adicionar professor:"+res.status);
+            }
 
             console.log(res);
           });
         };
 
-      }).controller('ProfessorEditController',function($scope,$state,$window,$stateParams,Professor){
+      }).controller('ProfessorEditController',function($scope,$http,APIlb,$state,$window,$stateParams,Professor){
 
+        $scope.showMSG=function(str){
+          $window.alert(str);
+        };
         $scope.updateProfessor=function(){
           Professor.upsert($scope.professor,function (res) {
 
@@ -159,7 +179,40 @@ angular.module('app.controllers.Professor',[]).controller('ProfessorListControll
 
             console.log(res);
           });
-        }
+        };
+
+        $scope.getEndereco=function(cep){
+          $scope.professor.end_cep=cep;
+          $http.get(APIlb.urlCorreios+$scope.professor.end_cep+".json").success(function(data, status, headers, config) {
+            // this callback will be called asynchronously
+            // when the response is available
+
+            $scope.professor.end_bairro=  data.bairro;
+            $scope.professor.end_cidade=data.localidade;
+            $scope.professor.end_rua=data.logradouro;
+            $scope.professor.end_estado=data.uf;
+
+            console.log(data);
+          }).
+          error(function(data, status, headers, config) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            console.log(data);
+            $scope.professor.end_bairro="";
+            $scope.professor.end_cidade="";
+            $scope.professor.end_rua="";
+            $scope.professor.end_estado="";
+            if(status==0)
+            {
+              $window.alert("Não há conexão com a internet para recuperar o endereço!");
+            }else {
+              $window.alert("CEP inválido");
+            }
+
+
+          });
+        };
+
 
         $scope.loadProfessor=function(){
           Professor.findById({id:$stateParams.id},
